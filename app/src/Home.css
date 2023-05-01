@@ -1,0 +1,89 @@
+@import url(./fonts.css);
+
+.home-banner {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+.left {
+  width: 40%;
+  height: 100%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.shop-button {
+  border: solid lightyellow 1px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  height: 50px;
+  position: relative;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.shop-button span {
+  color: lightyellow;
+  font-family: Spectral;
+  font-size: 20px;
+  position: relative;
+  z-index: 20;
+  transition: .3s;
+}
+.shop-button::before {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  background-color: lightyellow;
+  right: 0;
+  transition: .3s;
+  z-index: 0;
+}
+
+.shop-button:hover::before {
+  right: unset;
+  left: 0;
+  width: 100%;
+}
+
+.shop-button:hover span {
+  color: black;
+}
+
+.home-title {
+  color: lightyellow;
+  font-family: Spectral;
+  font-size: 70px;
+  box-sizing: border-box;
+  padding: 0 50px;
+}
+
+.home-banner hr {
+  width: 80%;
+  margin: 40px 0;
+}
+
+.home-text {
+  color: grey;
+  font-family: Spectral;
+  box-sizing: border-box;
+  padding: 0 100px;
+  margin-bottom: 80px;
+}
+
+.right {
+  width: 60%;
+  height: 100%;
+  background-image: url("./assets/medias/cave.jpg");
+  background-size: cover;
+  background-position: 50%;
+}
