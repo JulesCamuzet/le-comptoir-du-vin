@@ -1,0 +1,163 @@
+@import url(./fonts.css);
+
+.banner {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.nv-background-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url("./assets/medias/vigne.jpg");
+  background-size: cover;
+  background-position: 50%;
+  filter: brightness(40%);
+  z-index: -10;
+}
+
+.nv-title {
+  font-family: Specral;
+  color: lightyellow;
+  font-size: 6vw;
+  margin-left: 300px;
+}
+
+.nv-scroll-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  left: 50%;
+  bottom: 100px;
+  transform: translate(-50%);
+  cursor: pointer;
+}
+
+.nv-scroll-button svg {
+  width: 30px;
+  transition: .3s;
+}
+
+.nv-scroll-button:hover svg {
+  transform: translateY(30%);
+}
+
+.nv-list-section {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.nv-list {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  border-top: solid 1px;
+  margin: 10vh 0;
+}
+
+.nv-list-item {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  transition: 1s;
+}
+
+.nv-list-item-title {
+  height: 10vh;
+  min-height: 100px;
+  border-bottom: solid 1px;
+  display: flex;
+  cursor: pointer;
+  position: relative;
+  transition: 1s;
+}
+
+
+.nv-list-item-title span {
+  font-family: Spectral;
+  font-size: 30px;
+  position: relative;
+  z-index: 10;
+  transition: 1s;
+  margin-left: 50px;
+  position: relative;
+  margin-top: 10px;
+}
+
+.nv-list-item-title svg {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  width: 30px;
+  height: 30px;
+  transition: .5s;
+}
+
+.nv-list-item-title svg.visible {
+  transform: rotate(180deg);
+}
+
+.nv-list-item-title:hover svg{
+  stroke: lightyellow;
+}
+
+.nv-list-item-title span::after {
+  display: block;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: black;
+  transition: .5s;
+}
+
+.nv-list-item-title::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 0%;
+  left: 0;
+  top: 0;
+  background-color: black;
+  transition: .5s;
+}
+
+.nv-list-item-title:hover span {
+  transition: .3s;  
+  color:  lightyellow;
+}
+
+.nv-list-item-title:hover span::after {
+  background-color: lightyellow;
+  width: 100%;
+}
+
+.nv-list-item-title:hover::before {
+  height: 100%;
+}
+
+.nv-list-item-content {
+  list-style-type: none;
+  font-family: Spectral;
+  overflow: hidden;
+  background-color: lightyellow;
+  transition: 1s;
+}
+
+.nv-list-item-content li {
+  height: 50px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}

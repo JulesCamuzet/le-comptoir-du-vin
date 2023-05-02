@@ -1,0 +1,25 @@
+{
+  "Languedoc": [
+    "Vigneron 1",
+    "Vigneron 2",
+    "Vigneron 3"
+  ],
+  "Rhones" : [
+    "Vigneron 1",
+    "Vigneron 2",
+    "Vigneron 3",
+    "Tom",
+    "Fabien",
+    "Yow"
+  ],
+  "Provence" : [
+    "Vigneron 1",
+    "Vigneron 2",
+    "Vigneron 3"
+  ],
+  "Loire" : [
+    "Vigneron 1",
+    "Vigneron 2",
+    "Vigneron 3"
+  ]
+}
