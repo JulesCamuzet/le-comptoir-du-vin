@@ -1,21 +1,56 @@
-import NavMenu from "./components/NavMenu";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./NosVignerons.css";
 import vigneronsData from "./vigneronsData.json";
 
 const data = Object.entries(vigneronsData);
 
 const NosVigneronsBanner = () => {
+  const [offset, setOffset] = useState(0);
+  const [hideNavIcon, setHideNavIcon] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const listSection = document.querySelector(".nv-list-section");
+
+      setOffset(window.scrollY);
+      if (window.scrollY >= listSection.getBoundingClientRect().top + window.innerHeight) {
+        setHideNavIcon(true);
+      } else {
+        setHideNavIcon(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const autoScroll = () => {
+    const listSection = document.querySelector(".nv-list-section");
+    const listToTop = listSection.getBoundingClientRect().top;
+    window.scrollBy(0, listToTop);
+  };
+
   return (
     <React.Fragment>
+      <div
+        className={
+          hideNavIcon ? "nav-icon-background visible" : "nav-background-icon"
+        }
+      ></div>
       <div className="banner">
-        <div className="nv-background-container"></div>
+        <div
+          className="nv-background-container"
+          style={{ transform: `translateY(-${offset * 0.5}px)` }}
+        ></div>
         <h1 className="nv-title">
           Nos
           <br />
           Vignerons
         </h1>
-        <button className="nv-scroll-button">
+        <button className="nv-scroll-button" onClick={autoScroll}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -101,7 +136,6 @@ const NosVigneronsListItem = (props) => {
 const NosVignerons = () => {
   return (
     <React.Fragment>
-      <NavMenu navButtonColor={"lightyellow"} />
       <NosVigneronsBanner />
       <NosVigneronsList />
     </React.Fragment>

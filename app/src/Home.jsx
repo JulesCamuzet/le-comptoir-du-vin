@@ -1,11 +1,9 @@
 import React from "react";
-import NavMenu from "./components/NavMenu";
 import "./Home.css";
 
 const Home = () => {
   return (
     <React.Fragment>
-      <NavMenu  navButtonColor="lightyellow"/>
       <div className="home-banner">
         <div className="left">
           <h1 className="home-title">Le comptoir des vins</h1>

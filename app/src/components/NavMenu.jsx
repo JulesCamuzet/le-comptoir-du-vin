@@ -82,6 +82,7 @@ const NavMenu = (props) => {
                         ? { transitionDelay: `${1 + index * 0.1}s` }
                         : { transitionDelay: `${index * 0.1}s` }
                     }
+                    onClick={handleClick}
                     className={
                       navOpened
                         ? "nav-link-content visible"
