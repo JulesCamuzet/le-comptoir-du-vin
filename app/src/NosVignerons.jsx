@@ -123,7 +123,7 @@ const NosVigneronsListItem = (props) => {
       </h2>
       <ul
         className="nv-list-item-content"
-        style={opened ? { height: `${50 * nbVignerons}px` } : { height: "0px" }}
+        style={opened ? { height: `${50 * nbVignerons}px`, borderBottom: "solid black 1px" } : { height: "0px" }}
       >
         {vigneronsArr.map((vigneronName, index) => {
           return <li key={vigneronName}>{vigneronName}</li>;

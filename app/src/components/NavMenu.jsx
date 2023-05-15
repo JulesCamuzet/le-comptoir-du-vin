@@ -4,14 +4,16 @@ import "./NavMenu.css";
 
 const NavMenu = (props) => {
   const [navOpened, setNavOpened] = useState(false);
-  const navLinks = ["/nos-vignerons", "/", "/"];
+
+  const linksTitles = ["Nos vignerons", "Notre histoire", "Nous contacter"];
+  const navLinks = ["/nos-vignerons", "/", "/contact"];
 
   const navButtonColor = props.navButtonColor;
 
   const handleClick = () => {
     navOpened ? setNavOpened(false) : setNavOpened(true);
   };
-  const linksTitles = ["Nos vignerons", "Notre histoire", "Nous contacter"];
+
   return (
     <React.Fragment>
       <svg
@@ -164,7 +166,7 @@ const NavMenu = (props) => {
                   d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
                 />
               </svg>
-              <span>6 rue des Arts - 31000, Toulouse</span>
+              <span>8 rue des Arts - 31000, Toulouse</span>
             </div>
           </div>
         </div>
